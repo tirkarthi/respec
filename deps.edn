@@ -1,0 +1,9 @@
+{
+ ;; Paths in project
+ :paths ["src"]
+
+ ;; Project dependencies, a map from lib to coordinate
+ :deps {
+        org.clojure/clojure {:mvn/version "1.9.0-RC1"}
+        }
+ }

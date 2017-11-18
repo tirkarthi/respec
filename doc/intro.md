@@ -1,3 +1,3 @@
 # Introduction to respec
 
-TODO: write [great documentation](http://jacobian.org/writing/what-to-write/)
+This is a set of specs I wrote for clojure.core as a learning exercise

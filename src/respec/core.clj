@@ -3,15 +3,15 @@
             [clojure.spec.test.alpha :as stest]))
 
 (s/fdef clojure.core/dec
-        :args #(number? (first %1))
+        :args (s/cat :x number?)
         :ret number?)
 
 (s/fdef clojure.core/inc
-        :args #(number? (first %1))
+        :args (s/cat :x number?)
         :ret number?)
 
 (s/fdef clojure.core/rand-int
-        :args #(number? (first %1))
+        :args (s/cat :x number?)
         :ret number?)
 
 (s/fdef clojure.core/first
@@ -114,12 +114,12 @@
 
 (s/fdef clojure.core/nthnext
         :args (s/cat :coll coll? :n #(and (integer? %1)
-                                          (or (zero? %1) (pos-int? %1))))
+                                          (or nat-int? %1)))
         :ret coll?)
 
 (s/fdef clojure.core/nthrest
         :args (s/cat :coll coll? :n #(and (integer? %1)
-                                          (or (zero? %1) (pos-int? %1))))
+                                          (or nat-int? %1)))
         :ret coll?)
 
 (s/fdef clojure.core/take-last
@@ -147,7 +147,7 @@
         :ret boolean?)
 
 (s/fdef clojure.core/zero?
-        :args #(number? (first %1))
+        :args (s/cat :x number?)
         :ret boolean?)
 
 (s/fdef clojure.core/cycle
@@ -183,11 +183,11 @@
         :ret number?)
 
 (s/fdef clojure.core/pos?
-        :args #(number? (first %1))
+        :args (s/cat :x number?)
         :ret boolean?)
 
 (s/fdef clojure.core/neg?
-        :args #(number? (first %1))
+        :args (s/cat :x number?)
         :ret boolean?)
 
 (s/fdef clojure.core/quot
